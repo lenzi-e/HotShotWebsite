@@ -32,6 +32,7 @@
       }
 
       main {
+        border-top: 1px solid #271d36;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -43,8 +44,12 @@
 
       .content-container {
         overflow: auto;
-        padding: 2rem;
-        padding-bottom: 5rem;
+        padding: 2rem 2rem 0;
+        padding-bottom: 2.2rem;
+      }
+
+      .text-container {
+        flex-grow: 1;
       }
 
       h1 {
@@ -53,6 +58,7 @@
         margin-top: 0;
         margin-bottom: 1.5rem;
         color: #271d36;
+        flex-shrink: 0;
       }
 
       h2 {
@@ -60,6 +66,7 @@
         margin-top: 0;
         margin-bottom: 3rem;
         color: #080808;
+        flex-shrink: 0;
       }
 
       h3 {
@@ -68,6 +75,7 @@
         margin-top: 0;
         margin-bottom: 2rem;
         color: #271d36;
+        flex-shrink: 0;
       }
 
       .icon-container {
@@ -84,8 +92,9 @@
       .button-container {
         display: flex;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 2rem;
         flex-wrap: wrap;
+        margin-bottom: 0.5rem;
       }
 
       a.button {
@@ -94,7 +103,7 @@
         color: #080808;
         text-decoration: none;
         font-size: 1.1rem;
-        padding: 0.75rem 2rem;
+        padding: 0.75rem;
         border-radius: 30px;
         display: inline-flex;
         align-items: center;
@@ -116,25 +125,39 @@
         flex-shrink: 0;
         flex-grow: 0;
         text-align: center;
-        padding: 0.75rem 2rem;
+        padding: 0.5rem 2rem;
         font-size: 0.9rem;
         background-color: #dfdbe5;
         color: #080808;
         border-top: 1px solid #271d36;
       }
 
-      footer a {
-        color: #2269cc;
+      .privacy-policy {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+        background-color: #271d36;
+        padding: 0.4rem 1rem;
+        border-top-left-radius: 0.5rem;
+      }
+
+      .privacy-policy a {
+        color: #dfdbe5;
         text-decoration: none;
       }
 
-      footer a:hover,
-      footer a:focus {
+      .privacy-policy a:hover,
+      .privacy-policy a:focus {
         text-decoration: underline;
       }
 
       p {
         margin-bottom: 2rem;
+      }
+
+      footer p {
+        margin-bottom: 1.5rem;
       }
 
       .icon-container img {
@@ -148,6 +171,10 @@
         body {
           background-color: #080808;
           color: #ffffff;
+        }
+
+        main {
+          border-top: 1px solid #dfdbe5;
         }
 
         h1,
@@ -178,22 +205,22 @@
           outline-offset: 3px;
         }
 
+        .privacy-policy {
+          background-color: #dfdbe5;
+        }
+
+        .privacy-policy a {
+          color: #080808;
+        }
+
         footer {
           background-color: #271d36;
           color: #ffffff;
           border-top: 1px solid #dfdbe5;
         }
-
-        footer a {
-          color: #69d5fb;
-        }
-
-        .icon-container img {
-          content: url("./app-icon-dark.png"); /* dark mode image */
-        }
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 900px) {
         h2 {
           font-size: 1.5rem;
         }
@@ -206,50 +233,63 @@
           padding-left: 1rem;
           padding-right: 1rem;
         }
+
+        .button-container {
+          gap: 1rem;
+        }
+
+        a.button {
+          font-size: 0.8rem;
+          width: 160px;
+        }
       }
     </style>
   </head>
   <body>
     <main>
       <div class="content-container">
-        <h1>HotShot</h1>
-        <h2>FIND QUALITY ESPRESSO</h2>
+        <div class="text-container">
+          <h1>HotShot</h1>
+          <h2>FIND QUALITY ESPRESSO</h2>
 
-        <div class="icon-container">
-          <img src="./app-icon.png" alt="App icon" />
-        </div>
+          <div class="icon-container">
+            <img src="./app-icon.png" alt="App icon" />
+          </div>
 
-        <h3>life is too short for bad coffee</h3>
-
-        <p>
-          Get early access and download the beta version today for a sneak peek!
-        </p>
-
-        <div
-          class="button-container"
-          role="navigation"
-          aria-label="Primary links"
-        >
-          <a
-            href="https://testflight.apple.com/join/xfsZHxWb"
-            target="_blank"
-            class="button"
-            role="button"
-            >Apple App Store</a
-          >
-          <a
-            href="https://play.google.com/apps/testing/com.lenzi.erickson.HotShots"
-            target="_blank"
-            class="button"
-            role="button"
-            >Google Play</a
-          >
+          <h3>life is too short for bad coffee</h3>
         </div>
       </div>
     </main>
 
     <footer>
-      <a href="/privacy-policy">Privacy Policy</a>
+      <p>
+        Get early access and download the beta version today for a sneak peek!
+      </p>
+
+      <div
+        class="button-container"
+        role="navigation"
+        aria-label="Primary links"
+      >
+        <a
+          href="https://testflight.apple.com/join/xfsZHxWb"
+          target="_blank"
+          class="button"
+          role="button"
+          >Apple App Store</a
+        >
+        <a
+          href="https://play.google.com/apps/testing/com.lenzi.erickson.HotShots"
+          target="_blank"
+          class="button"
+          role="button"
+          >Google Play</a
+        >
+      </div>
+
+      <p class="privacy-policy">
+        <a href="/privacy-policy">Privacy Policy</a>
+      </p>
     </footer>
   </body>
 </html>
